@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/checkout.css">
+    <link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet">
+    <script defer src="../scripts/checkout.js"></script>
+</head>
+
+<body>
+
+    <div class="nav">
+        <a href="contact.html">Contact US</a>
+        <a href="index.html#about">About</a>
+        <a href="shop.html">Shop</a>
+        <a class="active" href="index.html">Home</a>
+        <img src="../assets/images/Icon.png" alt="Logo" />
+    </div>
+
+    <h1>
+        Check-Out
+    </h1>
+
+    <form onsubmit="return validation();">
+        <input type="text" id="firstname" placeholder="First Name"><br>
+        <input type="text" id="lastname" placeholder="Last Name"><br>
+        <input type="text" id="phone" placeholder="Phone Number"><br>
+        <input type="text" id="address" placeholder="Address">
+        <input type="text" id="card" placeholder="Card Number"><br>
+        <input type="text" id="date" placeholder="Expiry Date ex: MM/YY"><br>
+        <input type="text" id="cvv" placeholder="CVV"><br>
+        <input id="button" type="submit" value="Pay Now">
+    </form>
+
+    <hr>
+    <h2>
+        Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;49.96$<br>
+
+    </h2>
+    <h4>VAT Included</h4>
+
+</body>
+
+</html>

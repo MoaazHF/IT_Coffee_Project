@@ -105,7 +105,7 @@ body {
 }
 
 * {
-    font-family: "Roboto Mono", monospace;
+    /* font-family: "Roboto Mono", monospace; */
     font-optical-sizing: auto;
     font-style: normal;
     box-sizing: border-box;
@@ -677,16 +677,6 @@ header .navbar {
 
 
 /*To make a space between border & text */
-
-.about-section .section-content .about-details h2::after {
-    content: "";
-    width: 80px;
-    height: 5px;
-    display: block;
-    margin: 10px auto 0;
-    border-radius: 10px;
-    background: scroll;
-}
 
 .about-section .about-image-wrapper .about-image {
     border-radius: 50%;

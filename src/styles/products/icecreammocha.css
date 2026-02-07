@@ -1,0 +1,298 @@
+body{
+    overflow-x: hidden;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+body {
+    margin: 0;
+    background-color: #ebdeb9;
+    font-family: "Inter", sans-serif;
+}
+
+/* Navigation */
+.nav {
+    height: 100px;
+    background-color: #661B1B;
+    overflow: hidden;
+    top: 0; 
+    left: 0;
+    padding-top: 0;
+    position: fixed;
+    margin: 0px;
+    z-index: 999;
+    width: 100%;
+}
+  
+.nav a {
+    float: right;
+    position: relative;
+    color: #CFB277;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Open sans";
+    font-weight: 700;
+    transform: translate(-30px, 20px);
+    text-indent: 30px;
+    text-transform: uppercase;
+}
+  
+.nav a:hover {
+    font-weight: 800;
+    text-decoration: underline;
+    color: #c6a156f7;
+}
+  
+.nav img {
+    width: 200px;
+    height: 158px;
+    transform: translate(10px, -30px);
+}
+
+/* Item Page */
+.item-page {
+    display: flex;
+}
+
+.left-page img {
+    width: 203px;
+    position: relative;
+    top: 122px;
+    left: -122px;
+}
+
+.right-page {
+    position: relative;
+    left: 320px;
+    top: 130px;
+    font-size: x-large;
+}
+
+.icon-cart {
+    position: relative;
+    left: 500px;
+    color: #661b1b;
+    font-size: 40px;
+}
+
+.contant {
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+}
+
+.span-name {
+    display: block;
+    background-color: black;
+    width: 400px;
+    height: 2px;
+    position: relative;
+    right: 10px;
+    bottom: 30px;
+}
+
+p {
+    font-size: 20px;
+    position: relative;
+    bottom: 30px;
+    right: 20px;
+    color:black;
+    font-family: "Inder", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 2;
+}
+
+.icon-price {
+    position: relative;
+    top: 15px;
+    font-size: 70px;
+    right: 20px;
+}
+
+.price-count {
+    display: flex;
+    position: relative;
+    bottom: 30px;
+}
+
+.count-js {
+    font-size: 40px;
+    position: relative;
+    top: 40px;
+    left: 200px;
+}
+
+.span-price {
+    display: block;
+    background-color: black;
+    width: 600px;
+    height: 3px;
+    position: relative;
+    right: 55px;
+    bottom: 30px;
+}
+
+.add-to-cart-button {
+    background-color: #701e1e;
+    color: white;
+    font-size: larger;
+    font-family: "inter", oswlide;
+    border-radius: 20px;
+    width: 9cm;
+    height: 2cm;
+    margin-left: 2cm;
+    cursor: pointer;
+    border: 0px;
+}
+
+.table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -40px;
+    margin-bottom: 20px;
+}
+  
+.product-details-table {
+    width: 1000px;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+  
+.product-details-table th,
+.product-details-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+  
+.product-details-table th {
+    background-color:#cfb277;
+    font-weight: 600px;
+    width: 200px;
+}
+  
+.product-details-table td {
+    background-color:#661b1b;
+}
+  
+.product-details-table tr:last-child td {
+    border-bottom: none;
+}
+
+.product-details-table td p{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 14px;
+    top: 0px;
+    left: 3px;
+    font-family: inherit;
+    font-weight:600;
+}
+
+.product-details span{
+    display: block;
+    background-color: black;
+    width: 600px;
+    height: 3px;
+    position: relative;
+    right: -446px;
+    bottom: 76px;
+}
+
+.product-details P{
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 70px;
+    margin-top: -22px;
+    position: relative;
+    left: 555px;
+    color: black;
+}
+
+
+.count-js button,
+.count-js span {
+    padding: 8px 12px;
+    border: none;
+    outline: none;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    min-width: 40px;
+    text-align: center;
+    border-radius: 7px;
+    color: white;
+    background-color: #661b1b;
+}
+
+.count-js span {
+    display: inline-block;
+    border-radius: 7px;
+    width: 60px;
+}
+
+
+.count-js button {
+    cursor: pointer;
+    user-select: none;
+    color: white;
+    background-color: #661b1b;
+}
+
+.count-js button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.contant>h1{
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 70px;
+    position: relative;
+    color: black;
+    margin-top: -66px;
+    width: fit-content;
+}
+
+.icon-price i{
+    font-size: 50px;
+    color: #661b1b;
+}
+
+.price{
+    font-size: 42px;
+    position: relative;
+    top: 12px;
+}
+
+.left-page span{
+    display: block;
+    background-color: black;
+    width: 3px;
+    height: 345px;
+    position: relative;
+    right: -340px;
+    bottom: 178px;
+}
+
+.left-page{
+    margin-left: 310px;
+}

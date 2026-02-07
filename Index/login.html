@@ -37,14 +37,12 @@
                     <!--Go to About US page -->
                 </li>
                 <li class="nav-item">
-                    <a href="file:///D:/FCAI/Coffee_Project/IT_Coffee_Project/Index/coffee.html#sales"
-                        class="nav-link">Sales</a>
+                    <a href="file:///D:/FCAI/Coffee_Project/IT_Coffee_Project/Index/coffee.html#sales" class="nav-link">Sales</a>
                 </li>
 
 
                 <li class="nav-item">
-                    <a href="file:///D:/FCAI/Coffee_Project/IT_Coffee_Project/location/location.html"
-                        class="nav-link">Contact US</a>
+                    <a href="file:///D:/FCAI/Coffee_Project/IT_Coffee_Project/location/location.html" class="nav-link">Contact US</a>
                 </li>
 
                 <li class="nav-item user-interface">
@@ -72,13 +70,14 @@
                         <i class='bx bxs-user login-icon' class="login-icon"></i>
                         <h2 class="login-title">Login</h2>
 
-                        <form id="myForm" action="file:///D:/FCAI/Coffee_Project/IT_Coffee_Project/trial/shop.html"
-                            required method="get">
-                            <input type="text" name="username" placeholder="Username" maxlength="11" required autofocus>
-                            <input id="email" type="text" name="email" placeholder="user@email.com" required
-                                maxlength="25">
-                            <span id="error" style="color: red;"></span>
-                            <input type="password" name="password" placeholder="Password" required maxlength="8">
+                        <form action="#" onsubmit="return validateForm(event)" method="post">
+                            <input id="user" type="text" placeholder="Username" maxlength="11">
+                            <span id="userError" class="error-message"></span>
+                            <input id="email" type="email" placeholder="user@email.com" maxlength="25">
+                            <span id="emailError" class="error-message"></span>
+
+                            <input type="password" id="password" placeholder="Password" maxlength="8">
+                            <span id="passwordError" class="error-message"></span>
                             <button type="submit">Login</button>
                         </form>
 
@@ -96,30 +95,68 @@
         </section>
     </main>
     <script>
-        document.getElementById("myForm").addEventListener("submit", function (event) {
-            event.preventDefault(); // Stop form from submitting
+        function validateForm(event) {
+            event.preventDefault();
+            let isValid = true;
 
-            const emailInput = document.getElementById("email").value;
-            const errorSpan = document.getElementById("error");
+            let user = document.getElementById("user").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
 
-            // Simple regex for email validation
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            if (emailPattern.test(emailInput)) {
-                errorSpan.textContent = ""; // Clear error
-                alert("Email is valid! ✅");
-                window.location.href = "d:\\FCAI\\Coffee_Project\\IT_Coffee_Project\\trial\\shop.html";
+            document.getElementById("userError").textContent = "";
 
-                // You can submit the form here if needed
-                // this.submit();
-            } else {
-                errorSpan.textContent = "Please enter a valid email address.";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("passwordError").textContent = "";
+
+
+
+
+
+            if (user === "") {
+
+                document.getElementById("userError").textContent = "Please enter your first name";
+                isValid = false;
             }
 
 
+
+
+            if (email === "") {
+                document.getElementById("emailError").textContent = "Please enter your email";
+                isValid = false;
+            }
+
+            if (password.length < 5) {
+                document.getElementById("passwordError").textContent = "Password must be at least 5 characters";
+                isValid = false;
+            }
+
+
+
+
+            if (isValid) {
+
+                alert("Form submitted successfully!");
+
+
+                document.getElementById("user").value = "";
+
+                document.getElementById("email").value = "";
+                document.getElementById("password").value = "";
+
+
+
+                setTimeout(function() {
+                    window.location.href = "d:\\FCAI\\Coffee_Project\\IT_Coffee_Project\\trial\\shop.html";
+                }, 500);
+
+                return isValid;
+            }
         }
-        );
     </script>
+
+
 
 </body>
 

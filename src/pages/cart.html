@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>coffee</title>
+    <link rel="stylesheet" href="../styles/cart.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- nav bar -->
+    <div class="nav">
+        <a href="contact.html">Contact US</a>
+        <a href="index.html#about">About</a>
+        <a href="shop.html">Shop</a>
+        <a class="active" href="index.html">Home</a>
+        <img src="../assets/images/Icon.png" alt="Logo" />
+    </div>
+    <div class="MyCart">
+        <h3>My Cart</h3>
+    </div>
+    <div class="cart-container">
+        <table>
+            <thead>
+                <tr>
+                    <!--table row-->
+                    <th>Item</th>
+                    <!--th for table headers-->
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+                <!--first row is done -->
+            </thead>
+            <tbody>
+                <tr class="cart-row">
+                    <!--second row starts-->
+                    <td>Chocolate Cake</td>
+                    <!--td for columns-->
+                    <!--item name-->
+                    <td class="cart-quantityPar">
+                        <input class="cart-quantityip" type="number" value="1" min="1">
+                        <!--for the counting box set 1 default and cannot go less than 1-->
+                    </td>
+                    <td class="cart-price">$15.00</td>
+                    <!--at price-->
+                    <td>$15.00</td>
+                    <!--at total-->
+                    <td><button class="remove-btn">Remove</button></td>
+                </tr>
+                <!--second row ends-->
+                <tr class="cart-row">
+                    <!--third row starts-->
+                    <td>Blueberry Muffin</td>
+                    <td class="cart-quantityPar">
+                        <input class="cart-quantityip" type="number" value="1" min="1">
+                    </td>
+                    <td class="cart-price">$3.00</td>
+                    <!--at price-->
+                    <td>$3.00</td>
+                    <!--at total-->
+                    <td><button class="remove-btn">Remove</button></td>
+                </tr>
+                <!--third row ends-->
+                <tr class="cart-row">
+                    <!--fourth row starts-->
+
+                    <td>French Baguette</td>
+                    <td class="cart-quantityPar">
+                        <input class="cart-quantityip" type="number" value="1" min="1">
+                    </td>
+                    <td class="cart-price">$2.50</td>
+                    <td>$2.50</td>
+                    <td><button class="remove-btn">Remove</button></td>
+                </tr>
+                <!-- fourth row ends-->
+            </tbody>
+        </table>
+        <!--  table ends -->
+
+        <div class="cart-summary">
+            <h3>Cart summary</h3>
+            <p>Subtotal: $0.00</p>
+            <p>Tax (5%): $0.00</p>
+            <p><strong>Total: $0.00</strong></p>
+        </div>
+
+        <button class="checkout-btn"><a href="checkout.html">Proceed to Checkout</a></button>
+    </div>
+    </div>
+    </main>
+
+    <script src="../scripts/cart.js"></script>
+</body>
+
+</html>

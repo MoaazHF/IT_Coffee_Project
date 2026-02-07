@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Main Css File-->
+    <link rel="stylesheet" href="../../styles/products/icecreammocha.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mocha Ice Cream</title>
+    <!--Font Family-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Inder&display=swap" rel="stylesheet">
+    <!--Font Awsome library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mystery+Quest&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <a href="../contact.html">Contact US</a>
+        <a href="../index.html#about">About</a>
+        <a href="../shop.html">Shop</a>
+        <a class="active" href="../index.html#home">Home</a>
+        <img src="../../assets/images/Icon.png" alt="Logo" />
+    </div>
+    
+    <div class="item-page">
+        <!-- Left part -->
+        <div class="left-page">
+            <img src="../../assets/images/s3d_el_so8air.png" alt="">
+            <span></span>
+        </div>
+        <!-- Right part -->
+        <div class="right-page">
+            <div class="contant">
+                <a class="icon-cart" href="../cart.html" target="_blank"><i class="fa-solid fa-cart-shopping"></i></a>
+                <h1>Mocha Ice Cream</h1>
+                <span class="span-name"></span>
+                <p class="para">
+                    Ice Cream Mocha<br>
+                    A delicious blend of coffee, chocolate, and creamy ice cream.<br>
+                    Chilled, sweet, and perfect as a dessert drink.
+                </p>
+                <div class="price-count">
+                    <div class="icon-price"><i class="fa-solid fa-money-check-dollar"></i></div>
+                    <h1 class="price">15$</h1>
+                    <div class="count-js">
+                        <button id="decrease">-</button>
+                        <span id="quantity">1</span>
+                        <button id="increase">+</button>
+                    </div>
+                </div>
+                <span class="span-price"></span>
+                <button id="addToCart" class="add-to-cart-button">Add To Cart</button>
+            </div>   
+        </div>
+    </div>
+    <div class="product-details">
+        <p>Product Details</p>
+        <span></span>
+    </div>
+    <div class="table-container">
+        <table class="product-details-table">
+            <tr>
+                <th>Material</th>
+                <td><p>Milk , Coffe , Sugar , Cream , Mocha</p></td>
+            </tr>
+            <tr>
+                <th>Pieces number</th>
+                <td><p>1</p></td>
+            </tr>
+            <tr>
+                <th>Flavor</th>
+                <td><p>Mocha</p></td>
+            </tr>
+            <tr>
+                <th>Weight</th>
+                <td><p>40 grams</p></td>
+            </tr>
+            <tr>
+                <th>Calories</th>
+                <td><p>~450-600 per 100g</p></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let quantity = 1;
+        const quantityDisplay = document.getElementById("quantity");
+    
+        // Increase quantity
+        const inc = document.getElementById("increase");
+      inc .addEventListener("click", function() {
+            quantity++;
+            quantityDisplay.innerHTML = quantity;
+        });
+    
+        // Decrease quantity
+        const dec=document.getElementById("decrease");
+        dec.addEventListener("click", function() {
+            if (quantity > 1) {
+                quantity--;
+                quantityDisplay.innerHTML = quantity;
+            }
+        });
+    
+        // Add to Cart functionality
+        document.getElementById("addToCart").addEventListener("click", function() {
+            let cartData=localStorage.getItem("cart");
+            let cart=[];
+            if(cartData){
+                cart=JSON.parse(cartData);
+            }
+    
+            const newItem = {
+                id: "Mocha Ice Cream",
+                name: "Mocha Ice Cream",
+                price: 15,
+                quantity: quantity,
+                image: "../../assets/images/s3d_el_so8air.png"
+            };
+    
+            // Check if item already in cart
+            let found=false;
+           for(let i=0;i<cart.length;i++){
+            if(cart[i].id===newItem.id){
+                cart[i].quantity+=newItem.quantity;
+                found=true;
+                break;
+            }
+           }
+           if(!found){
+            cart.push(newItem);
+           }
+           
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            //success popup
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Item added to the cart",
+                showConfirmButton: false,
+                timer: 1500,
+                background: "#cfb277",         
+                color: "black",              
+                iconColor: "#701e1e",
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

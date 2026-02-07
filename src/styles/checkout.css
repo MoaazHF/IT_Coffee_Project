@@ -1,0 +1,251 @@
+.nav {
+    background-color: #661B1B;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    padding-top: 0;
+    position: fixed;
+    margin: 0;
+    height: 100px;
+    z-index: 999;
+    width: 100%;
+}
+
+.nav a {
+    float: right;
+    position: relative;
+    color: #CFB277;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Open sans";
+    font-weight: 700;
+    transform: translate(-30px, 20px);
+    text-indent: 25px;
+}
+
+.nav img {
+    width: 200px;
+    height: 158px;
+    transform: translate(10px, -30px);
+}
+
+body {
+    background-color: #EBDEB9;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    transform: translate(0px, 100px);
+    text-align: center;
+    font-family: "Parisienne";
+    font-size: 45px;
+}
+
+#firstname {
+    width: 300px;
+    height: 20px;
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 18;
+    text-align: center;
+    font-style: italic;
+    background-color: #B59C68;
+    transform: translate(240px, 125px);
+}
+
+#firstname::placeholder {
+    color: black;
+    opacity: 47%;
+}
+
+#lastname {
+    width: 300px;
+    height: 20px;
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 18;
+    text-align: center;
+    font-style: italic;
+    background-color: #B59C68;
+    transform: translate(240px, 155px);
+}
+
+#lastname::placeholder {
+    color: black;
+    opacity: 47%;
+}
+
+#phone {
+    width: 300px;
+    height: 20px;
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 18;
+    text-align: center;
+    font-style: italic;
+    background-color: #B59C68;
+    transform: translate(240px, 185px);
+}
+
+#phone::placeholder {
+    color: black;
+    opacity: 47%;
+}
+
+#address {
+    width: 300px;
+    height: 20px;
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 18;
+    text-align: center;
+    font-style: italic;
+    background-color: #B59C68;
+    transform: translate(240px, 215px);
+}
+
+#address::placeholder {
+    color: black;
+    opacity: 47%;
+}
+
+#card {
+    width: 300px;
+    height: 20px;
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 18;
+    text-align: center;
+    font-style: italic;
+    background-color: #B59C68;
+    transform: translate(650px, -5px);
+}
+
+#card::placeholder {
+    color: black;
+    opacity: 47%;
+}
+
+#date {
+    width: 300px;
+    height: 20px;
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 18;
+    text-align: center;
+    font-style: italic;
+    background-color: #B59C68;
+    transform: translate(977px, 25px);
+}
+
+#date::placeholder {
+    color: black;
+    opacity: 47%;
+}
+
+#cvv {
+    width: 300px;
+    height: 20px;
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 18;
+    text-align: center;
+    font-style: italic;
+    background-color: #B59C68;
+    transform: translate(977px, 55px);
+}
+
+#cvv::placeholder {
+    color: black;
+    opacity: 47%;
+}
+
+#button {
+    width: 324px;
+    height: 43px;
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 18;
+    text-align: center;
+    font-style: italic;
+    background-color: #661B1B;
+    transform: translate(977px, 85px);
+    font-weight: 500;
+    transition: transform 0.08s ease-in, box-shadow 0.08s ease-in;
+    box-shadow: 0 2px 0 #000000;
+    /* slight shadow below */
+    position: relative;
+    box-sizing: border-box;
+    top: 0;
+    display: inline-block;
+}
+
+#button:active {
+    top: 2px;
+    box-shadow: 0 0px 0 black;
+}
+
+hr {
+    border: none;
+    width: 1200px;
+    height: 1.5px;
+    background-color: black;
+    transform: translateY(100px);
+}
+
+h2 {
+    font-family: "Open sans";
+    font-weight: 800px;
+    text-shadow: 0.2px 0 black, -0.2px 0 black;
+    font-style: italic;
+    margin-left: 10px;
+    padding-right: 10px;
+    width: fit-content;
+    transform: translate(1130px, 120px);
+}
+
+h4 {
+    transform: translate(1130px, 48px);
+    font-family: "Open sans";
+    font-weight: 400;
+    font-style: italic;
+    margin-left: 10px;
+    padding-right: 10px;
+    width: fit-content;
+}
+
+#button a {
+    text-decoration: none;
+    color: #B59C68;
+}
+
+#button:hover {
+    cursor: pointer;
+}

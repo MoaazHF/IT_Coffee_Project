@@ -8,7 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet'>
 
-    <!-- Font Awesome عشان الايقونات -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -16,8 +16,7 @@
 
 <body>
 
-    <!-- Navbar -->
-    <!--Header-->
+
     <header>
         <nav class="navbar section-content">
             <div class="nav-logo">
@@ -32,20 +31,17 @@
                     <a href="d:\FCAI\Coffee_Project\IT_Coffee_Project\trial\shop.html" class="nav-link">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a href="file:///D:/FCAI/Coffee_Project/IT_Coffee_Project/Index/coffee.html#about"
-                        class="nav-link">About</a>
-                    <!--Go to About US page -->
+                    <a href="file:///D:/FCAI/Coffee_Project/IT_Coffee_Project/Index/coffee.html#about" class="nav-link">About</a>
+
                 </li>
                 <li class="nav-item">
-                    <a href="file:///D:/FCAI/Coffee_Project/IT_Coffee_Project/Index/coffee.html#sales"
-                        class="nav-link">Sales</a>
+                    <a href="file:///D:/FCAI/Coffee_Project/IT_Coffee_Project/Index/coffee.html#sales" class="nav-link">Sales</a>
                 </li>
 
 
 
                 <li class="nav-item">
-                    <a href="file:///D:/FCAI/Coffee_Project/IT_Coffee_Project/location/location.html"
-                        class="nav-link">Contact US</a>
+                    <a href="file:///D:/FCAI/Coffee_Project/IT_Coffee_Project/location/location.html" class="nav-link">Contact US</a>
                 </li>
 
                 <li class="nav-item user-interface">
@@ -62,15 +58,14 @@
 
 
     <main>
-        <!-- Sign Up Form -->
+
         <section class="main-container">
-            <!-- Left Side: Image -->
+
             <div class="left-side">
-                <img src="d:\FCAI\Coffee_Project\IT_Coffee_Project\Material\gallery-1.jpg" alt="Signup Image"
-                    class="signup-img">
+                <img src="d:\FCAI\Coffee_Project\IT_Coffee_Project\Material\gallery-1.jpg" alt="Signup Image" class="signup-img">
             </div>
 
-            <!-- Right Side: Form -->
+
             <div class="right-side">
                 <div class="container">
                     <div class="form-box">
@@ -82,30 +77,30 @@
                         </div>
                         <h2>Sign Up</h2>
 
-                        <form action="#" onsubmit="return validateForm(event)" method="get">
-                            <form action="#" onsubmit="return validateForm(event)" method="post">
+
+                        <form action="#" onsubmit="return validateForm(event)" method="post">
 
 
-                                <div class="name-row">
-                                    <input type="text" id="firstName" placeholder="First Name" maxlength="11">
-                                    <span id="firstNameError" class="error-message"></span>
+                            <div class="name-row">
+                                <input type="text" id="firstName" placeholder="First Name" maxlength="11">
+                                <span id="firstNameError" class="error-message"></span>
 
-                                    <input type="text" id="lastName" placeholder="Last Name " maxlength="11">
-                                    <span id="lastNameError" class="error-message"></span>
-                                </div>
-                                <input type="email" id="email" placeholder="user@email.com" maxlength="25">
-                                <span id="emailError" class="error-message"></span>
+                                <input type="text" id="lastName" placeholder="Last Name " maxlength="11">
+                                <span id="lastNameError" class="error-message"></span>
+                            </div>
+                            <input type="email" id="email" placeholder="user@email.com" maxlength="25">
+                            <span id="emailError" class="error-message"></span>
 
-                                <input type="password" id="password" placeholder="password" maxlength="8">
-                                <span id="passwordError" class="error-message"></span>
+                            <input type="password" id="password" placeholder="password" maxlength="8">
+                            <span id="passwordError" class="error-message"></span>
 
 
-                                <input type="password" id="rePassword" placeholder="Re-enter password" maxlength="8">
-                                <span id="rePasswordError" class="error-message"></span>
+                            <input type="password" id="rePassword" placeholder="Re-enter password" maxlength="8">
+                            <span id="rePasswordError" class="error-message"></span>
 
-                                <button type="submit" class="btn">Sign Up</button>
-                            </form>
-                            <p>Already have an account? <a href="login.html">Login</a></p>
+                            <button type="submit" class="btn">Sign Up</button>
+                        </form>
+                        <p>Already have an account? <a href="login.html">Login</a></p>
 
                     </div>
                 </div>
@@ -146,6 +141,7 @@
 
             if (email === "") {
                 document.getElementById("emailError").textContent = "Please enter your email";
+                isValid = false;
             }
 
             if (password.length < 5) {
@@ -171,7 +167,7 @@
                 document.getElementById("rePassword").value = "";
 
 
-                setTimeout(function () {
+                setTimeout(function() {
                     window.location.href = "d:\\FCAI\\Coffee_Project\\IT_Coffee_Project\\trial\\shop.html";
                 }, 500);
 

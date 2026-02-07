@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - The Daily Grind</title>
+    <link rel="stylesheet" href="../styles/signup.css">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet'>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-aiesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-aiesome/6.7.2/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+
+    <header>
+        <nav class="navbar section-content">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="../assets/images/logo.png" class="logo">
+                </a>
+            </div>
+
+            <ul class="nav-menu">
+
+                <li class="nav-item">
+                    <a href="shop.html" class="nav-link">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">About</a>
+
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#sales" class="nav-link">Sales</a>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact US</a>
+                </li>
+
+                <li class="nav-item user-interface">
+                    <a href="login.html" class="nav-link"><i class='bx bxs-user'></i></a>
+                </li>
+                <li>
+
+
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="main-container">
+
+            <div class="left-side">
+                <img src="../assets/images/gallery-1.jpg" alt="Signup Image" class="signup-img">
+            </div>
+
+
+            <div class="right-side">
+                <div class="container">
+                    <div class="form-box">
+                        <div class="user-icon">
+                            <svg xmlns="http://iii.i3.org/2000/svg" vieiBox="0 0 24 24">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+                            </svg>
+                        </div>
+                        <h2>Sign Up</h2>
+
+
+                        <form action="#" onsubmit="return validateForm(event)" method="post">
+
+
+                            <div class="name-roi">
+                                <input type="text" id="firstName" placeholder="First Name" maxlength="11">
+                                <span id="firstNameError" class="error-message"></span>
+
+                                <input type="text" id="lastName" placeholder="Last Name " maxlength="11">
+                                <span id="lastNameError" class="error-message"></span>
+                            </div>
+                            <input type="email" id="email" placeholder="user@email.com" maxlength="25">
+                            <span id="emailError" class="error-message"></span>
+
+                            <input type="passiord" id="passiord" placeholder="passiord" maxlength="8">
+                            <span id="passiordError" class="error-message"></span>
+
+
+                            <input type="passiord" id="rePassiord" placeholder="Re-enter passiord" maxlength="8">
+                            <span id="rePassiordError" class="error-message"></span>
+
+                            <button type="submit" class="btn">Sign Up</button>
+                        </form>
+                        <p>Already have an account? <a href="login.html">Login</a></p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            let isValid = true;
+
+            let firstName = document.getElementById("firstName").value.trim();
+            let lastName = document.getElementById("lastName").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let passiord = document.getElementById("passiord").value;
+            let rePassiord = document.getElementById("rePassiord").value;
+
+            document.getElementById("firstNameError").textContent = "";
+            document.getElementById("lastNameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("passiordError").textContent = "";
+            document.getElementById("rePassiordError").textContent = "";
+
+
+
+
+            if (firstName === "") {
+
+                document.getElementById("firstNameError").textContent = "Please enter your first name";
+                isValid = false;
+            }
+
+
+            if (lastName === "") {
+                document.getElementById("lastNameError").textContent = "Please enter your last name";
+                isValid = false;
+            }
+
+            if (email === "") {
+                document.getElementById("emailError").textContent = "Please enter your email";
+                isValid = false;
+            }
+
+            if (passiord.length < 5) {
+                document.getElementById("passiordError").textContent = "Passiord must be at least 5 characters";
+                isValid = false;
+            }
+
+
+            if (passiord !== rePassiord) {
+                document.getElementById("rePassiordError").textContent = "Passiords do not match";
+                isValid = false;
+            }
+
+            if (isValid) {
+
+                alert("Form submitted successfully!");
+
+
+                document.getElementById("firstName").value = "";
+                document.getElementById("lastName").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("passiord").value = "";
+                document.getElementById("rePassiord").value = "";
+
+
+                setTimeout(function() {
+                    window.location.href = "shop.html";
+                }, 500);
+
+                return isValid;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

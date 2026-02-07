@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Main Css File-->
+    <link rel="stylesheet" href="../../styles/products/americancoffe.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American Coffee</title>
+    <!--Font Family-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Inder&display=swap" rel="stylesheet">
+    <!--Font Awsome library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mystery+Quest&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <a href="../contact.html">Contact US</a>
+        <a href="../index.html#about">About</a>
+        <a href="../shop.html">Shop</a>
+        <a class="active" href="../index.html#home">Home</a>
+        <img src="../../assets/images/Icon.png" alt="Logo" />
+    </div>
+    
+    <div class="item-page">
+        <!-- Left part -->
+        <div class="left-page">
+            <img src="../../assets/images/amrica.png" alt="">
+            <span></span>
+        </div>
+        <!-- Right part -->
+        <div class="right-page">
+            <div class="contant">
+                <a class="icon-cart" href="../cart.html" target="_blank"><i class="fa-solid fa-cart-shopping"></i></a>
+                <h1>American Coffee</h1>
+                <span class="span-name"></span>
+                <p class="para">
+                    Americano<br>
+                    A smooth, bold coffee made by adding hot water to espresso.<br>
+                    Light, rich, and perfect for a classic coffee experience.
+                
+                </p>
+                <div class="price-count">
+                    <div class="icon-price"><i class="fa-solid fa-money-check-dollar"></i></div>
+                    <h1 class="price">11.77$</h1>
+                    <div class="count-js">
+                        <button id="decrease">-</button>
+                        <span id="quantity">1</span>
+                        <button id="increase">+</button>
+                    </div>
+                </div>
+                <span class="span-price"></span>
+                <button id="addToCart" class="add-to-cart-button">Add To Cart</button>
+            </div>   
+        </div>
+    </div>
+    <div class="product-details">
+        <p>Product Details</p>
+        <span></span>
+    </div>
+    <div class="table-container">
+        <table class="product-details-table">
+            <tr>
+                <th>Material</th>
+                <td><p> Light Coffe , Sugar , Milk </p></td>
+            </tr>
+            <tr>
+                <th>Pieces number</th>
+                <td><p>1</p></td>
+            </tr>
+            <tr>
+                <th>Flavor</th>
+                <td><p>Ordinary Coffe</p></td>
+            </tr>
+            <tr>
+                <th>Weight</th>
+                <td><p>30 grams</p></td>
+            </tr>
+            <tr>
+                <th>Calories</th>
+                <td><p>~80-110 per 100ml</p></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+      let quantity = 1;
+        const quantityDisplay = document.getElementById("quantity");
+    
+        // Increase quantity
+        const inc = document.getElementById("increase");
+      inc .addEventListener("click", function() {
+            quantity++;
+            quantityDisplay.innerHTML = quantity;
+        });
+    
+        // Decrease quantity
+        const dec=document.getElementById("decrease");
+        dec.addEventListener("click", function() {
+            if (quantity > 1) {
+                quantity--;
+                quantityDisplay.innerHTML = quantity;
+            }
+        });
+    
+        // Add to Cart functionality
+        document.getElementById("addToCart").addEventListener("click", function() {
+            let cartData=localStorage.getItem("cart");
+            let cart=[];
+            if(cartData){
+                cart=JSON.parse(cartData);
+            }
+    
+            const newItem = {
+                id: "American Coffee",
+                name: "American Coffe",
+                price: 11.77,
+                quantity: quantity,
+                image: "../../assets/images/amrica.png"
+            };
+    
+           // Check if item already in cart
+            let found=false;
+           for(let i=0;i<cart.length;i++){
+            if(cart[i].id===newItem.id){
+                cart[i].quantity+=newItem.quantity;
+                found=true;
+                break;
+            }
+           }
+           if(!found){
+            cart.push(newItem);
+           }
+           
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            //success popup
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Item added to the cart",
+                showConfirmButton: false,
+                timer: 1500,
+                background: "#cfb277",         
+                color: "black",              
+                iconColor: "#701e1e",
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
