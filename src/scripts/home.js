@@ -13,8 +13,13 @@ const productsSlider = document.querySelector('.products-swiper');
 if (productsSlider) {
     new Swiper('.products-swiper', {
         loop: true,
+        speed: 650,
         spaceBetween: 20,
         slidesPerView: 3,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
         navigation: {
             nextEl: '.products-swiper .swiper-button-next',
             prevEl: '.products-swiper .swiper-button-prev',
