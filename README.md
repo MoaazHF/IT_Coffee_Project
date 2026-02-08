@@ -12,7 +12,7 @@ A cleaned and organized version of the coffee store website. The production-read
 
 ## How to Run
 Open `src/pages/index.html` in a browser.
-
+ 
 ## Notes
 - Cart data is stored in `localStorage` under `cart`.
 - Checkout total is stored under `cartTotal`.
