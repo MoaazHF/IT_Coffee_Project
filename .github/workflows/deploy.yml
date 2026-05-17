@@ -1,0 +1,28 @@
+name: Deploy VPS
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Archive release
+        run: tar -czf release.tar.gz .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release
+          path: release.tar.gz
+
+      - name: Deployment instructions
+        run: |
+          echo "Use your VPS runner or SSH action to copy release.tar.gz and run:"
+          echo "docker compose --env-file .env up -d --build"

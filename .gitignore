@@ -1,2 +1,13 @@
-Material/desserts.png
-xerrr.docx
+node_modules
+dist
+coverage
+.env
+.env.*
+!.env.example
+npm-debug.log*
+.DS_Store
+.vscode
+playwright-report
+test-results
+apps/web/lighthouse-results
+apps/web/.lighthouseci

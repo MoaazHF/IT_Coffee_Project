@@ -1,0 +1,30 @@
+:root {
+  --color-bg: #f5ead5;
+  --color-bg-soft: #efe1c5;
+  --color-surface: #fffaf1;
+  --color-ink: #2f1a10;
+  --color-muted: #6a4d3a;
+  --color-brand: #6b2f1a;
+  --color-brand-strong: #4f1f10;
+  --color-accent: #cfb277;
+  --color-danger: #a32121;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+
+  --shadow-sm: 0 4px 12px rgba(50, 25, 10, 0.12);
+  --shadow-md: 0 10px 25px rgba(50, 25, 10, 0.18);
+
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 2rem;
+}

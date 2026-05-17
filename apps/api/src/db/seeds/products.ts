@@ -1,0 +1,31 @@
+import type { Product } from "../../types/domain.js";
+
+export const seedProducts: Omit<Product, "id" | "isActive">[] = [
+  { slug: "cappuccino", name: "Cappuccino", description: "Rich espresso with steamed milk and foam.", imageUrl: "/assets/images/cuppchino.png", unitPriceCents: 500, category: "ready-to-go" },
+  { slug: "frappe-mocha", name: "Frappe Mocha", description: "Blended mocha frappe.", imageUrl: "/assets/images/frappe.png", unitPriceCents: 750, category: "ready-to-go" },
+  { slug: "frappe-caramel", name: "Frappe Caramel", description: "Blended caramel frappe.", imageUrl: "/assets/images/frappe carmle.png", unitPriceCents: 1049, category: "ready-to-go" },
+  { slug: "turkish-coffee", name: "Turkish Coffee", description: "Traditional strong Turkish brew.", imageUrl: "/assets/images/turki.png", unitPriceCents: 999, category: "ready-to-go" },
+  { slug: "american-coffee", name: "American Coffee", description: "Smooth classic American coffee.", imageUrl: "/assets/images/amrica.png", unitPriceCents: 1177, category: "ready-to-go" },
+  { slug: "ice-coffee", name: "Ice Coffee", description: "Chilled coffee beverage.", imageUrl: "/assets/images/Ice Coffe.png", unitPriceCents: 865, category: "ready-to-go" },
+  { slug: "mocha-ice-cream", name: "Mocha Ice Cream", description: "Coffee-flavored ice cream.", imageUrl: "/assets/images/s3d_el_so8air.png", unitPriceCents: 1500, category: "ready-to-go" },
+  { slug: "chocolate-ice-cream", name: "Chocolate Ice Cream", description: "Creamy chocolate ice cream.", imageUrl: "/assets/images/Coco .png", unitPriceCents: 2000, category: "ready-to-go" },
+  { slug: "latte", name: "Latte", description: "Balanced espresso and steamed milk.", imageUrl: "/assets/images/lattah.png", unitPriceCents: 1049, category: "ready-to-go" },
+  { slug: "cookies", name: "Cookies", description: "Crunchy fresh cookies.", imageUrl: "/assets/images/kokies-removebg-preview.png", unitPriceCents: 500, category: "bakery" },
+  { slug: "croissant", name: "Croissant", description: "Buttery flaky croissant.", imageUrl: "/assets/images/corrsant-removebg-preview.png", unitPriceCents: 278, category: "bakery" },
+  { slug: "donuts", name: "Donuts", description: "Sweet baked donuts.", imageUrl: "/assets/images/donuts-removebg-preview.png", unitPriceCents: 923, category: "bakery" },
+  { slug: "biscuit", name: "Biscuit", description: "Crisp biscuit snack.", imageUrl: "/assets/images/bescut-removebg-preview.png", unitPriceCents: 143, category: "bakery" },
+  { slug: "oreo", name: "Oreo", description: "Chocolate cookie sandwich.", imageUrl: "/assets/images/oreo-removebg-preview.png", unitPriceCents: 750, category: "bakery" },
+  { slug: "bread", name: "Bread", description: "Fresh artisan bread.", imageUrl: "/assets/images/bread-removebg-preview.png", unitPriceCents: 331, category: "bakery" },
+  { slug: "toast", name: "Toast", description: "Classic toasted bread.", imageUrl: "/assets/images/Toast.png", unitPriceCents: 320, category: "bakery" },
+  { slug: "rusk", name: "Rusk", description: "Crisp twice-baked bread.", imageUrl: "/assets/images/rut-removebg-preview.png", unitPriceCents: 443, category: "bakery" },
+  { slug: "cupcake", name: "Cupcake", description: "Soft cupcake with frosting.", imageUrl: "/assets/images/cupckae-removebg-preview.png", unitPriceCents: 1130, category: "bakery" },
+  { slug: "brazilian-coffee", name: "Brazilian Coffee", description: "Pack of Brazilian roast beans.", imageUrl: "/assets/images/brazilan_coffe.png", unitPriceCents: 2250, category: "packs" },
+  { slug: "espresso-capsules", name: "Espresso Capsules", description: "Capsules for espresso machines.", imageUrl: "/assets/images/capsule.png", unitPriceCents: 2065, category: "packs" },
+  { slug: "roasted-coffee", name: "Roasted Coffee", description: "Dark roasted whole beans.", imageUrl: "/assets/images/coffe_roasted_.png", unitPriceCents: 2229, category: "packs" },
+  { slug: "coffee-beans", name: "Coffee Beans", description: "Premium whole coffee beans.", imageUrl: "/assets/images/coffe_bean-removebg-preview.png", unitPriceCents: 1254, category: "packs" },
+  { slug: "colombian-coffee", name: "Colombian Coffee", description: "Single-origin Colombian coffee.", imageUrl: "/assets/images/Colompian_coffee-removebg-preview.png", unitPriceCents: 1700, category: "packs" },
+  { slug: "fast-prepare-coffee", name: "Fast Prepare Coffee", description: "Quick instant coffee blend.", imageUrl: "/assets/images/fast_prepare.png", unitPriceCents: 1299, category: "packs" },
+  { slug: "german-coffee", name: "German Coffee", description: "Balanced medium roast blend.", imageUrl: "/assets/images/jacob_coffe.png", unitPriceCents: 2000, category: "packs" },
+  { slug: "african-coffee", name: "African Coffee", description: "Fruity African-origin roast.", imageUrl: "/assets/images/dark-roast.png", unitPriceCents: 2345, category: "packs" },
+  { slug: "light-roasted-coffee", name: "Light Roasted Coffee", description: "Light roast with bright acidity.", imageUrl: "/assets/images/LIght_roasted_coffe-removebg-preview.png", unitPriceCents: 1554, category: "packs" }
+];

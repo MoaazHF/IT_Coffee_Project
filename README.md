@@ -1,45 +1,99 @@
-# IT Coffee Project
+# Daily Grind Coffee - Production Upgrade
 
-A front-end coffee shop website with product browsing, authentication pages, cart/checkout flow, and dark mode support.
+Production-ready full-stack monorepo for a coffee shop application.
 
-## Features
-- Multi-page website (`Home`, `Shop`, `Contact`, `Login`, `Signup`, `Cart`, `Checkout`, `Thank You`)
-- Product detail pages for coffee, bakery, and dessert items
-- Cart logic using `localStorage`
-- Checkout total persistence
-- Light and dark mode toggle
+## Stack
+- Frontend: React + Vite + TypeScript
+- Backend: Node.js + Express + TypeScript
+- Database: PostgreSQL
+- Payments: Stripe Checkout (test mode)
+- Deployment: Docker Compose + Nginx reverse proxy
+- Quality gates: ESLint, TypeScript, Vitest, Playwright, Lighthouse, npm audit
 
-## Tech Stack
-- HTML5
-- CSS3
-- Vanilla JavaScript
-
-## Project Structure
+## Repository Layout
 ```text
+apps/
+  web/   React frontend (responsive UI, routing, auth/cart/checkout flows)
+  api/   Express API (auth, products, cart, checkout, webhooks, orders)
+infra/
+  nginx/ reverse-proxy config
 src/
-  assets/        images, icons, and video
-  pages/         main pages
-  pages/products product detail pages
-  scripts/       cart, checkout, home, dark mode logic
-  styles/        global and page styles
-  styles/products product page styles
-ScreenShots/     README showcase images
+  legacy static project preserved for migration reference
 ```
 
-## Run Locally
-1. Clone the repository.
-2. Open `src/pages/index.html` in a browser.
+## API Surface (`/api/v1`)
+- `GET /health`
+- `GET /products`
+- `GET /products/:slug`
+- `POST /auth/register`
+- `POST /auth/login`
+- `POST /auth/refresh`
+- `POST /auth/logout`
+- `GET /cart`
+- `POST /cart/items`
+- `PATCH /cart/items/:itemId`
+- `DELETE /cart/items/:itemId`
+- `POST /checkout/session` (`Idempotency-Key` header required)
+- `POST /webhooks/stripe`
+- `GET /orders/:id`
 
-## Data Persistence
-- Cart items key: `cart`
-- Checkout total key: `cartTotal`
+## Environment
+Copy `.env.example` to `.env` and set values.
 
-## Screenshots
-### Home (Light Mode)
-![Home Light Mode](./ScreenShots/Home%20Light%20Mode.png)
+Required for local API run:
+- `DATABASE_URL`
+- `JWT_ACCESS_SECRET`
+- `JWT_REFRESH_SECRET`
 
-### Home (Dark Mode)
-![Home Dark Mode](./ScreenShots/Home%20Dark%20Mode.png)
+Optional for checkout integration:
+- `STRIPE_SECRET_KEY`
+- `STRIPE_WEBHOOK_SECRET`
+- `VITE_STRIPE_PUBLISHABLE_KEY`
 
-### Showcase
-![Showcase](./ScreenShots/ShowCase.png)
+## Local Development
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start PostgreSQL:
+```bash
+docker compose up -d postgres
+```
+
+3. Run migration and seed:
+```bash
+npm run db:migrate -w apps/api
+npm run db:seed -w apps/api
+```
+
+4. Start backend and frontend (two terminals):
+```bash
+npm run dev:api
+npm run dev:web
+```
+
+## Quality Commands
+```bash
+npm run lint
+npm run typecheck
+npm run test
+npm run build
+npm run e2e -w apps/web
+npm run lhci -w apps/web
+npm audit --audit-level=high
+```
+
+## Docker Deployment
+```bash
+docker compose --env-file .env up -d --build
+```
+
+Services:
+- `http://localhost` -> Nginx -> Web/API
+- `http://localhost/api/v1/health` -> API health endpoint
+
+## Migration Strategy Implemented
+- Legacy static pages remain under `src/` for reference.
+- New app routes include compatibility redirects from old `.html` paths.
+- Product duplication replaced by a single product route (`/products/:slug`) driven by catalog data.

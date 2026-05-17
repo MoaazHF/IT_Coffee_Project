@@ -1,0 +1,3 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Link } from "react-router-dom";
+export const HomePage = () => (_jsx("section", { className: "hero", children: _jsxs("div", { children: [_jsx("p", { className: "eyebrow", children: "Daily Grind Coffee" }), _jsx("h1", { children: "Responsive, consistent coffee ordering experience." }), _jsx("p", { children: "Production-grade frontend and backend with catalog, auth, cart, and checkout flow." }), _jsxs("div", { className: "row gap", children: [_jsx(Link, { className: "button", to: "/shop", children: "Browse Shop" }), _jsx(Link, { className: "button secondary", to: "/contact", children: "Contact" })] })] }) }));

@@ -1,0 +1,23 @@
+{
+  "name": "coffee-project-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w apps/web",
+    "dev:web": "npm run dev -w apps/web",
+    "dev:api": "npm run dev -w apps/api",
+    "build": "npm run build -w apps/web && npm run build -w apps/api",
+    "test": "npm run test -w apps/web && npm run test -w apps/api",
+    "lint": "npm run lint -w apps/web && npm run lint -w apps/api",
+    "typecheck": "npm run typecheck -w apps/web && npm run typecheck -w apps/api",
+    "format": "npm run format -w apps/web && npm run format -w apps/api",
+    "db:migrate": "npm run db:migrate -w apps/api",
+    "db:seed": "npm run db:seed -w apps/api"
+  },
+  "engines": {
+    "node": ">=18.19.0"
+  }
+}
